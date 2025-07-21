@@ -1,10 +1,8 @@
 /* color palette from <https://github.com/vuejs/theme> */
-:root {
   :root {
     --font-family: "Alegreya Sans", sans-serif;
     --second-family: "Alegreya", sans-serif;
   }
-}
 
 
 *,
