@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MeditationList from '@/components/MeditationList.vue'
+import MeditationCardList from '@/components/MeditationCardList.vue'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import MeditationList from '@/components/MeditationList.vue'
   </aside>
 
   <main>
-   <MeditationList/>
+   <MeditationCardList/>
 
   </main>
 </template>

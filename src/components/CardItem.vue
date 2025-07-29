@@ -2,15 +2,22 @@
 
 import ButtonStart from '@/components/ButtonStart.vue'
 import ButtonBeginSmallIcon from '@/icons/ButtonBeginSmallIcon.vue'
+
+const {title, description='', duration_min } = defineProps<{
+  title: string,
+  description?: string,
+  duration_min: number
+}>()
+
 </script>
 
 <template>
 <div class="card-item">
   <div class="card-header">
-    Короткая
+    {{title}}
   </div>
   <div class="card-text">
-    Базовая медитация на 5 минут для успокоения сознания
+    {{description}}
   </div>
 <div class="card-footer">
 <ButtonStart>
@@ -18,7 +25,7 @@ Begin
   <ButtonBeginSmallIcon />
 </ButtonStart>
   <div class="card-time">
-    10 min
+    {{duration_min}} min
   </div>
 </div>
 </div>
@@ -29,6 +36,7 @@ Begin
   background: #f7f3f0;
   border-radius: 20px;
   max-width: 339px;
+  min-width: 300px;
   min-height: 170px;
   padding: 22px 30px;
 }
