@@ -64,7 +64,7 @@ const {
 
 .card-time {
   font-size: 15px;
-  color: var(--color-secondary);
+  color: var(--color-fg);
   opacity: 0.75;
 }
 </style>
