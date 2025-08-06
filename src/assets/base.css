@@ -2,9 +2,9 @@
   :root {
     --font-family: "Alegreya Sans", sans-serif;
     --second-family: "Alegreya", sans-serif;
-    --color-bg: #1E1E1E;
+    --color-bg-element: #1E1E1E;
     --color-fg: #fff;
-    --color-secondary: #253334;
+    --color-bg: #253334;
   }
 
 
@@ -22,4 +22,5 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg);
 }
