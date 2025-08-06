@@ -1,22 +1,20 @@
 <script setup lang="ts">
-
-import MeditationCardList from '@/components/MeditationCardList.vue'
-import ProfileInfo from '@/components/ProfileInfo.vue'
+import MeditationCardList from '@/components/MeditationCardList.vue';
+import ProfileInfo from '@/components/ProfileInfo.vue';
 </script>
 
 <template>
-
-
   <div class="main">
     <ProfileInfo />
 
-    <MeditationCardList/>
-
+    <MeditationCardList />
   </div>
 </template>
 
 <style scoped>
-.main{
+.main {
   color: #ffffff;
+  display: flex;
+  gap: 100px;
 }
 </style>

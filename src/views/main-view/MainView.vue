@@ -1,35 +1,34 @@
 <script setup lang="ts">
-
-import LogoIcon from '@/icons/LogoIcon.vue'
-import MenuItem from '@/components/MenuItem.vue'
-import PlayIcon from '@/icons/PlayIcon.vue'
-import StatisticIcon from '@/icons/StatisticIcon.vue'
-import ExitIcon from '@/icons/ExitIcon.vue'
+import LogoIcon from '@/icons/LogoIcon.vue';
+import MenuItem from '@/components/MenuItem.vue';
+import PlayIcon from '@/icons/PlayIcon.vue';
+import StatisticIcon from '@/icons/StatisticIcon.vue';
+import ExitIcon from '@/icons/ExitIcon.vue';
 </script>
 
 <template>
   <header>
-    <LogoIcon/>
+    <LogoIcon />
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item ">
+        <li class="nav-item">
           <RouterLink active-class="active-link" :to="'/meditation'">
-          <MenuItem text="Meditation">
-            <PlayIcon/>
-          </MenuItem>
-        </RouterLink>
+            <MenuItem text="Meditation">
+              <PlayIcon />
+            </MenuItem>
+          </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink  active-class="active-link" :to="'/meditation'">
-          <MenuItem text="Statistics">
-          <StatisticIcon/>
-        </MenuItem>
-        </RouterLink>
+          <RouterLink active-class="active-link" :to="'/statistics'">
+            <MenuItem text="Statistics">
+              <StatisticIcon />
+            </MenuItem>
+          </RouterLink>
         </li>
-        <li class="nav-item ">
-          <RouterLink active-class="active-link" :to="'/meditation'">
+        <li class="nav-item">
+          <RouterLink active-class="active-link" :to="'/'">
             <MenuItem text="Exit">
-              <ExitIcon/>
+              <ExitIcon />
             </MenuItem>
           </RouterLink>
         </li>
@@ -42,13 +41,14 @@ import ExitIcon from '@/icons/ExitIcon.vue'
 </template>
 
 <style scoped>
-header{
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 48px;
 }
-.nav-list{
+
+.nav-list {
   display: flex;
   list-style: none;
   gap: 34px;
@@ -60,7 +60,8 @@ header{
 .nav-list li {
   list-style: none;
 }
-.nav-item{
+
+.nav-item {
   width: 200px;
   height: 92px;
   display: flex;
@@ -79,12 +80,11 @@ header{
   justify-content: center;
   align-items: center;
   gap: 2px;
-cursor: pointer;
-
+  cursor: pointer;
 }
 
 .nav-item a:hover,
-.nav-item a.active-link{
+.nav-item a.active-link {
   color: #fff;
 }
 </style>

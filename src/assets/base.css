@@ -1,11 +1,11 @@
 /* color palette from <https://github.com/vuejs/theme> */
-  :root {
-    --font-family: "Alegreya Sans", sans-serif;
-    --second-family: "Alegreya", sans-serif;
-    --color-bg-element: #1E1E1E;
-    --color-fg: #fff;
-    --color-bg: #253334;
-  }
+:root {
+  --font-family: "Alegreya Sans", sans-serif;
+  --font-family-second: "Alegreya", sans-serif;
+  --color-bg-element: #1E1E1E;
+  --color-fg: #fff;
+  --color-bg: #253334;
+}
 
 
 *,
@@ -24,3 +24,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--color-bg);
 }
+
+
