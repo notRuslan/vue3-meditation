@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 export const router = createRouter({
-  routes:[
+  routes: [
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
@@ -9,26 +9,25 @@ export const router = createRouter({
     },
     {
       path: '/',
-      component: ()=>import('./views/main-view/MainView.vue'),
+      component: () => import('./views/main-view/MainView.vue'),
       children: [
         {
           path: '',
-          component: ()=>import('./views/main-view/MeditationListView.vue'),
-          name: 'main,'
+          component: () => import('./views/main-view/MeditationListView.vue'),
+          name: 'main',
         },
         {
           path: 'meditation',
-          component: ()=>import('./views/main-view/MeditationProgressView.vue'),
-          name: 'meditation,'
+          component: () => import('./views/main-view/MeditationProgressView.vue'),
+          name: 'meditation',
         },
         {
           path: 'statistics',
-          component: ()=>import('./views/main-view/StatisticsView.vue'),
-          name: 'statistics,'
+          component: () => import('./views/main-view/StatisticsView.vue'),
+          name: 'statistics',
         },
-      ]
-    }
+      ],
+    },
   ],
   history: createWebHistory(),
 });
-
