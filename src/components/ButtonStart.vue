@@ -13,7 +13,7 @@
   border-radius: 10px;
   width: 111px;
   height: 39px;
-  background: var(--color-secondary);
+  background: var(--color-bg);
   color: var(--color-fg);
   font-family: var(--font-family);
   font-weight: 500;

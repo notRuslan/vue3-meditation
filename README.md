@@ -11,3 +11,11 @@ Add Pinia to project
 - Create Store for meditations
 - Get meditations by API
 - List meditations and Component for meditations
+
+## Task 3
+Add Vue router
+- Add pages: Main, Statistics
+- Add menu
+- Add whole Main page
+
+
