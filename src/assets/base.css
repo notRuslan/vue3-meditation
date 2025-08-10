@@ -5,6 +5,8 @@
   --color-bg-element: #1E1E1E;
   --color-fg: #fff;
   --color-bg: #253334;
+  --body-bg-image: none;
+  --body-bg-auth-image: url('@/assets/auth_bg.jpg');
 }
 
 
@@ -23,6 +25,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--color-bg);
+
+  background-image: var(--body-bg-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  height: 100vh;
+}
+
+.body__auth {
+  background-image: var(--body-bg-auth-image);
 }
 
 

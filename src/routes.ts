@@ -8,7 +8,7 @@ export const router = createRouter({
       component: () => import('./views/NotFoundView.vue'),
     },
     {
-      path: '/',
+      path: '/main',
       component: () => import('./views/main-view/MainView.vue'),
       children: [
         {
@@ -26,6 +26,27 @@ export const router = createRouter({
           component: () => import('./views/main-view/StatisticsView.vue'),
           name: 'statistics',
         },
+      ],
+    },
+    {
+      path: '/',
+      component: () => import('./views/auth-view/AuthView.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('./views/auth-view/WelcomeView.vue'),
+          name: 'welcome',
+        },
+        /* {
+           path: 'login',
+           component: () => import('./views/auth-view/LoginView.vue'),
+           name: 'login',
+         },
+         {
+           path: 'register',
+           component: () => import('./views/auth-view/RegisterView.vue'),
+           name: 'register',
+         },*/
       ],
     },
   ],
