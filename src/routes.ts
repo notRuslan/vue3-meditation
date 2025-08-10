@@ -41,12 +41,12 @@ export const router = createRouter({
            path: 'login',
            component: () => import('./views/auth-view/LoginView.vue'),
            name: 'login',
-         },
-         {
-           path: 'register',
-           component: () => import('./views/auth-view/RegisterView.vue'),
-           name: 'register',
          },*/
+        {
+          path: 'register',
+          component: () => import('./views/auth-view/RegisterView.vue'),
+          name: 'register',
+        },
       ],
     },
   ],

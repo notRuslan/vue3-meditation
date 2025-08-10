@@ -5,6 +5,7 @@
   --color-bg-element: #1E1E1E;
   --color-fg: #fff;
   --color-bg: #253334;
+  --color-inactive: #bec2c2;
   --body-bg-image: none;
   --body-bg-auth-image: url('@/assets/auth_bg.jpg');
 }
