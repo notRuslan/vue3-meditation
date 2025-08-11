@@ -16,7 +16,13 @@ export const API_ROUTES = {
   stats: 'stats',
 };
 
-export function httpClient() {
+export function httpClient(hasAuth: boolean = true) {
+  if (!hasAuth) {
+    return axios.create({
+      baseURL: 'http://localhost:3000/api',
+      timeout: 10000,
+    });
+  }
   const authStore = useAuthStore();
 
   return axios.create({

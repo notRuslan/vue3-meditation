@@ -28,7 +28,7 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   async function register(regProfile: IRegisterRequest) {
-    const { data } = await httpClient().post<IResponseSuccess | IResponseFailed>(
+    const { data } = await httpClient(false).post<IResponseSuccess | IResponseFailed>(
       API_ROUTES.auth.register,
       regProfile,
     );
@@ -61,7 +61,7 @@ export const useAuthStore = defineStore('auth', () => {
   const getToken = computed(() => token.value);
 
   async function login(credentials: ILoginRequest) {
-    const { data } = await httpClient().post<ILoginResponseSuccess | ILoginResponseFailed>(
+    const { data } = await httpClient(false).post<ILoginResponseSuccess | ILoginResponseFailed>(
       API_ROUTES.auth.login,
       credentials,
     );
