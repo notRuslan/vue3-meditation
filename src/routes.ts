@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { useAuthStore } from '@/stores/auth.store.ts';
 
 export const router = createRouter({
   routes: [
@@ -8,7 +9,7 @@ export const router = createRouter({
       component: () => import('./views/NotFoundView.vue'),
     },
     {
-      path: '/',
+      path: '/main',
       component: () => import('./views/main-view/MainView.vue'),
       children: [
         {
@@ -28,6 +29,39 @@ export const router = createRouter({
         },
       ],
     },
+    {
+      path: '/',
+      component: () => import('./views/auth-view/AuthView.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('./views/auth-view/WelcomeView.vue'),
+          name: 'welcome',
+        },
+        {
+          path: 'login',
+          component: () => import('./views/auth-view/LoginView.vue'),
+          name: 'login',
+        },
+        {
+          path: 'register',
+          component: () => import('./views/auth-view/RegisterView.vue'),
+          name: 'register',
+        },
+      ],
+    },
   ],
   history: createWebHistory(),
+});
+
+router.beforeEach((to) => {
+  const authStore = useAuthStore();
+  if (
+    !authStore.getToken &&
+    to.name !== 'welcome' &&
+    to.name !== 'login' &&
+    to.name !== 'register'
+  ) {
+    return { name: 'welcome' };
+  }
 });

@@ -4,6 +4,16 @@ import MenuItem from '@/components/MenuItem.vue';
 import PlayIcon from '@/icons/PlayIcon.vue';
 import StatisticIcon from '@/icons/StatisticIcon.vue';
 import ExitIcon from '@/icons/ExitIcon.vue';
+import { useAuthStore } from '@/stores/auth.store.ts';
+import { useRouter } from 'vue-router';
+
+const authStorage = useAuthStore();
+const router = useRouter();
+
+function logout() {
+  authStorage.clearToken();
+  router.push({ name: 'welcome' });
+}
 </script>
 
 <template>
@@ -12,21 +22,21 @@ import ExitIcon from '@/icons/ExitIcon.vue';
     <nav class="nav">
       <ul class="nav-list">
         <li class="nav-item">
-          <RouterLink active-class="active-link" :to="'/meditation'">
+          <RouterLink active-class="active-link" :to="'/main/meditation'">
             <MenuItem text="Meditation">
               <PlayIcon />
             </MenuItem>
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink active-class="active-link" :to="'/statistics'">
+          <RouterLink active-class="active-link" :to="'/main/statistics'">
             <MenuItem text="Statistics">
               <StatisticIcon />
             </MenuItem>
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink active-class="active-link" :to="'/'">
+          <RouterLink active-class="active-link" :to="'/'" @click="logout">
             <MenuItem text="Exit">
               <ExitIcon />
             </MenuItem>
