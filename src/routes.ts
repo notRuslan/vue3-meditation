@@ -62,6 +62,6 @@ router.beforeEach((to) => {
     to.name !== 'login' &&
     to.name !== 'register'
   ) {
-    return { name: 'auth' };
+    return { name: 'welcome' };
   }
 });
