@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import ButtonText from '@/components/ButtonText.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+function registration() {
+  router.push({ name: 'register' });
+}
 </script>
 
 <template>
@@ -10,7 +17,7 @@ import ButtonText from '@/components/ButtonText.vue';
       чтобы быть счастливым.
     </div>
   </div>
-  <ButtonText title="Войти в приложение" />
+  <ButtonText title="Войти в приложение" @click="registration" />
 </template>
 
 <style scoped>

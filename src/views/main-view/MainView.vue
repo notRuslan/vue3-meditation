@@ -12,14 +12,14 @@ import ExitIcon from '@/icons/ExitIcon.vue';
     <nav class="nav">
       <ul class="nav-list">
         <li class="nav-item">
-          <RouterLink active-class="active-link" :to="'/meditation'">
+          <RouterLink active-class="active-link" :to="'/main/meditation'">
             <MenuItem text="Meditation">
               <PlayIcon />
             </MenuItem>
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink active-class="active-link" :to="'/statistics'">
+          <RouterLink active-class="active-link" :to="'/main/statistics'">
             <MenuItem text="Statistics">
               <StatisticIcon />
             </MenuItem>

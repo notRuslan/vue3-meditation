@@ -3,43 +3,46 @@ import InputString from '@/components/InputString.vue';
 import { ref, watch } from 'vue';
 import ButtonText from '@/components/ButtonText.vue';
 import { useAuthStore } from '@/stores/auth.store.ts';
-import { useRouter } from 'vue-router';
+import { router } from '@/routes.ts';
 
-const form = ref<{ email?: string; username?: string; password?: string }>({});
+const form = ref<{ username?: string; password?: string }>({});
+
 const authStore = useAuthStore();
-const router = useRouter();
+
+form.value = {
+  username: authStore.profile?.username,
+  password: ``,
+};
+
+watch(
+  () => authStore.getToken,
+  () => {
+    if (authStore.getToken) {
+      router.push({ name: 'main' });
+      document.body.classList.remove('body__auth');
+    }
+  },
+);
 
 function onSubmit(event: Event) {
   event.preventDefault();
   // console.log(event);
-  if (!form.value.email || !form.value.username || !form.value.password) {
+  if (!form.value.username || !form.value.password) {
     return;
   }
 
-  authStore.register(form.value);
+  authStore.login(form.value);
   form.value = {}; //reset form
 }
-
-watch(
-  () => authStore.respInfo,
-  () => {
-    if (authStore.respInfo) {
-      if (authStore.respInfo.status === 'success') {
-        form.value = {};
-        router.push({ name: 'login' });
-      }
-    }
-  },
-);
 </script>
 
 <template>
   <div class="auth-form">
     <form class="auth-form__form" @submit="onSubmit">
-      <InputString v-model="form.email" placeholder="Электронная почта" />
       <InputString v-model="form.username" placeholder="Имя" />
       <InputString v-model="form.password" placeholder="Пароль" />
-      <ButtonText title="Создать аккаунт" />
+      <ButtonText title="Войти в приложение" />
+      {{ authStore.getToken }}
     </form>
   </div>
 </template>

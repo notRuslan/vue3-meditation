@@ -37,11 +37,11 @@ export const router = createRouter({
           component: () => import('./views/auth-view/WelcomeView.vue'),
           name: 'welcome',
         },
-        /* {
-           path: 'login',
-           component: () => import('./views/auth-view/LoginView.vue'),
-           name: 'login',
-         },*/
+        {
+          path: 'login',
+          component: () => import('./views/auth-view/LoginView.vue'),
+          name: 'login',
+        },
         {
           path: 'register',
           component: () => import('./views/auth-view/RegisterView.vue'),

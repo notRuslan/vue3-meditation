@@ -14,6 +14,7 @@ const data = defineModel<string>();
   font-size: 18px;
   min-width: 306px;
   padding: 10px;
+  color: #ffffff;
 }
 
 .default-string::placeholder {

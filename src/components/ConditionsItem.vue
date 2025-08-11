@@ -5,7 +5,9 @@ const { text } = defineProps<{ text: string }>();
 <template>
   <div class="condition">
     <div class="profile-icon">
-      <slot></slot>
+      <div class="icon-wrapper">
+        <slot></slot>
+      </div>
     </div>
     <div class="profile-icon__text">{{ text }}</div>
   </div>
@@ -41,5 +43,10 @@ const { text } = defineProps<{ text: string }>();
   font-weight: 400;
   font-size: 12px;
   color: #fff;
+}
+
+.icon-wrapper {
+  width: 36px;
+  height: 36px;
 }
 </style>
