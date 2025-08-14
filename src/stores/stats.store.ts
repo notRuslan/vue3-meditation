@@ -6,5 +6,9 @@ export const useStatsStore = defineStore('stats', () => {
     await httpClient().post(API_ROUTES.stats, { type: feeling, value: 1 });
   }
 
-  return { setFeeling };
+  async function setDuration(value: number) {
+    await httpClient().post(API_ROUTES.stats, { duration: value });
+  }
+
+  return { setFeeling, setDuration };
 });

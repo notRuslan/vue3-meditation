@@ -33,3 +33,11 @@ Add VueRouter to project
 - Get real profile from backend
 - Make private routes all exclude /login and /register
 - Add queries for human state
+
+## Task 5 Finish
+
+- Add timer page
+- Add query to add meditation time
+- Add stat component
+- Add stats page
+- Add query to get stats
