@@ -6,10 +6,13 @@ import StartIcon from '@/icons/player-button/StartIcon.vue';
 import RecordedIcon from '@/icons/player-button/RecordedIcon.vue';
 import MeditationWatch from '@/components/MeditationWatches.vue';
 import { computed, onUnmounted, ref } from 'vue';
+import { useStatsStore } from '@/stores/stats.store.ts';
 
 const isStarted = ref<boolean>(false);
 const isRecording = ref<boolean>(false);
-const timeInSeconds = ref<number>(0);
+const timeInSeconds = ref<number>(60);
+
+const statsStore = useStatsStore();
 
 // Переменная для хранения ID интервала, чтобы его можно было остановить
 let timer: ReturnType<typeof setInterval> | undefined;
@@ -53,6 +56,13 @@ onUnmounted(() => {
 });
 
 function onRecord() {
+  isRecording.value = !isRecording.value;
+
+  const meditationInMinutes: number = Math.round(timeInSeconds.value / 60);
+  if (meditationInMinutes > 0) {
+    statsStore.setDuration(timeInSeconds.value);
+  }
+  resetTimer();
   isRecording.value = !isRecording.value;
 }
 </script>
