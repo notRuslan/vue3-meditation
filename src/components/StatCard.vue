@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import WavesIcon from '@/icons/statistics/WavesIcon.vue';
+import { toRefs } from 'vue';
 
 const {
   iconFill = '#2B5B54',
   paramValue = 0,
   description = '',
+  bgColor = '#ffffff',
 } = defineProps<{
   iconFill: string;
+  bgColor: string;
   paramValue: number;
   description: string;
 }>();
@@ -28,7 +31,7 @@ const {
   border-radius: 20px;
   width: 300px;
   height: 200px;
-  background: #69b09c;
+  background-color: v-bind(bgColor);
   justify-content: space-between;
 }
 
